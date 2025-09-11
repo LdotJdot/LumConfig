@@ -21,7 +21,7 @@ namespace LumConfg
             config = Initialize(this.path);
             if (config == null)
             {
-                throw new Exception("配置文件创建失败:" + path);
+                throw new Exception("Config create failed:" + path);
             }
         }
 
@@ -57,7 +57,7 @@ namespace LumConfg
                 string text = AppDomain.CurrentDomain.BaseDirectory + "\\" + path;
                 if (!File.Exists(text))
                 {
-                    throw new Exception("文件不存在:" + path);
+                    throw new Exception("File not found:" + path);
                 }
                 path = text;
             }
@@ -67,7 +67,7 @@ namespace LumConfg
             }
             catch
             {
-                throw new Exception("配置文件格式无效:" + path);
+                throw new Exception("Error config format:" + path);
             }
         }
 
