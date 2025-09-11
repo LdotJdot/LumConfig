@@ -27,6 +27,10 @@ foreach (var key in hotkeys)
 }
 ```
 
+The config file aa.json
+```json
+{"findmax":"xx","HotKey":46,"Now":"2025/9/11 10:25:50","TheHotKeys":[46,33,21],"HotKeys":{"Mainkey":426}}
+```
 
 ## Features
 
