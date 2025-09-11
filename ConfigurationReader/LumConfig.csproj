@@ -10,6 +10,32 @@
     <Authors>LdotJdot</Authors>
     <Company>LdotJdot</Company>
     <Product>LdotJdot</Product>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/LdotJdot/LumConfig</RepositoryUrl>
+    <PackageIcon>DOGGEblack.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/LdotJdot/LumConfig</PackageProjectUrl>
+    <Description>A lightweight, reflection-free JSON configuration manager for .NET that supports AOT (Ahead-of-Time) compilation. Easily manage your application's configuration with simple set/get operations and seamless serialization/deserialization.</Description>
+    <PackageTags>config;aot;json</PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReadMe.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="C:\Users\luoji\.nuget\packages\lumdbengine\1.0.1\DOGGEblack.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
