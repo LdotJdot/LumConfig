@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>A lightweight, reflection-free JSON configuration manager for .NET that supports AOT (Ahead-of-Time) compilation</Title>
+    <Version>1.0.1</Version>
+    <Authors>LdotJdot</Authors>
+    <Company>LdotJdot</Company>
+    <Product>LdotJdot</Product>
+  </PropertyGroup>
+
+</Project>
