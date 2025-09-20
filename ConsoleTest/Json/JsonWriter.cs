@@ -25,7 +25,7 @@ namespace LumConfg
         {
             try
             {
-                var str = LumJson.Serialize(obj);
+                var str = Json.Serialize(obj);
                 using (StreamWriter sw = new StreamWriter(path, append, Encoding.UTF8))
                 {
                     sw.Write(str);

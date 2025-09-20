@@ -40,7 +40,7 @@ namespace LumConfg
             try
             {
 
-            jsonDict = Json.Deserialize(jsonStr) as Dictionary<string, object>;
+            jsonDict = LumJson.Deserialize(jsonStr) as Dictionary<string, object>;
 
 
             }catch (Exception ex)
