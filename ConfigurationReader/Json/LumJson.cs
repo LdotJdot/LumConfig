@@ -144,6 +144,7 @@ namespace LumConfg
                     {
                         hasEscapes = true;
                         _position++; // 跳过转义字符
+                        length++; // 跳过转义字符
                         if (_position >= _span.Length)
                             break;
                     }
