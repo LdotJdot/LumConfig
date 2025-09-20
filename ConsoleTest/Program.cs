@@ -10,7 +10,8 @@ namespace ConsoleTest
     [MemoryDiagnoser]
     public class JsonConvert
     {
-        public const string simpleJson = @"{""name"":""a\""""}";
+        public const string simpleJson = @"{""name"":""\""老虎\""凯恩\u5927\u6492\u65e6""}";
+        public const string simpleJson2 = @"{""name"":32233}";
         public const string jsonNoComment = @"
         {
             ""version"": ""0.2.0"",
@@ -102,7 +103,7 @@ namespace ConsoleTest
             Console.WriteLine(JsonConvert.simpleJson);
             // var summary = BenchmarkRunner.Run<JsonConvert>();
 
-            var obj = LumJson.Deserialize(JsonConvert.simpleJson);
+            var obj = LumJson.Deserialize(JsonConvert.simpleJson2);
             Console.WriteLine((obj as Dictionary<string, object>)["name"]);
             Console.WriteLine(LumJson.Serialize(obj));
 

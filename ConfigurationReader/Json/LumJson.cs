@@ -52,7 +52,7 @@ namespace LumConfg
                     '"' => ReadString(),
                     't' or 'f' => ReadBoolean(),
                     'n' => ReadNull(),
-                    _ when IsDigit(current) || current == '-' => ReadNumber(),
+                    _ when IsDigit(current) || current == '-' || current=='.' => ReadNumber(),
                     '/' => ThrowUnexpectedComment(),
                     _ => ThrowUnexpectedCharacter(current)
                 };
@@ -229,15 +229,23 @@ namespace LumConfg
 
                 if (TryConsume('-'))
                     start = _position;
+                
+                bool isDouble = _span[_position] == '.';
+
+                if (isDouble) { _position++;}
 
                 // 快速扫描数字
                 while (_position < _span.Length && IsDigit(_span[_position]))
                     _position++;
 
-                bool isDouble = false;
 
                 if (_position < _span.Length && _span[_position] == '.')
                 {
+                    if (isDouble)
+                    {
+                        ThrowFormatException("Invalid number format");
+                    }
+
                     isDouble = true;
                     _position++;
                     while (_position < _span.Length && IsDigit(_span[_position]))
@@ -530,7 +538,7 @@ namespace LumConfg
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            private static bool IsDigit(char c) => (uint)(c - '0') <= 9;
+            private static bool IsDigit(char c) => (uint)(c - '0') <= 9; 
 
             [MethodImpl(MethodImplOptions.NoInlining)]
             private static void ThrowFormatException(string message) => throw new FormatException(message);
